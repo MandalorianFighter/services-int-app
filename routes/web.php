@@ -22,5 +22,5 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
         return view('dashboard');
     })->name('dashboard');
 
-    Route::get('/covid', 'App\Http\Controllers\HomeController@index')->name('covid');
+    Route::get('/covid', 'App\Http\Controllers\CovidController@index')->name('covid');
 });

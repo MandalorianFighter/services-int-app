@@ -3,6 +3,7 @@
 namespace App\Services;
 
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Http;
 
 class CovidStatisticService
 {
@@ -10,10 +11,7 @@ class CovidStatisticService
     {
         $today = Carbon::now()->toDateString();
 
-        $httpClient = new \GuzzleHttp\Client();
-        $request =
-            $httpClient
-                ->get("https://api.covid19api.com/total/country/{$country}/status/{$type}?from={$today}&to={$today}");
+        $request = Http::get("https://api.covid19api.com/total/country/{$country}/status/{$type}?from={$today}&to={$today}");
 
         $response = json_decode($request->getBody()->getContents());
 
