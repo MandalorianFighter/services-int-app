@@ -18,6 +18,9 @@
                     <x-jet-nav-link href="{{ route('covid') }}" :active="request()->routeIs('covid')">
                         {{ __('Covid-19') }}
                     </x-jet-nav-link>
+                    <x-jet-nav-link href="{{ route('cash-exchange') }}" :active="request()->routeIs('cash-exchange')">
+                        {{ __('Privat Cash Exchange Rate') }}
+                    </x-jet-nav-link>
                 </div>
             </div>
 

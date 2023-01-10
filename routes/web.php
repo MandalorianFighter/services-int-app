@@ -23,4 +23,6 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
     })->name('dashboard');
 
     Route::get('/covid', 'App\Http\Controllers\CovidController@index')->name('covid');
+
+    Route::get('/exchange-rate/privat', 'App\Http\Controllers\ExchangeRateController@cash')->name('cash-exchange');
 });
